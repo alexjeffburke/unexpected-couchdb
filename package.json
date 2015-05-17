@@ -1,0 +1,23 @@
+{
+  "name": "unexpected-mock-couchdb",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/unexpectedMockCouchdb.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Alex J Burke",
+  "license": "MIT",
+  "dependencies": {
+    "messy": "=6.2.0",
+    "unexpected": "=7.3.0",
+    "unexpected-messy": "=3.0.4",
+    "unexpected-mitm": "=5.4.0"
+  },
+  "devDependencies": {
+    "beanbag": "=3.2.0",
+    "express": "=4.12.3",
+    "mocha": "=2.2.5",
+    "unexpected-express": "=6.3.1"
+  }
+}
