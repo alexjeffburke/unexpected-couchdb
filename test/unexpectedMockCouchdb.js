@@ -58,4 +58,25 @@ describe('unexpected-mock-couchdb', function () {
             }
         });
     });
+
+    it('should return the correct count of documents', function () {
+        var documents = [{}, {}];
+
+        return expect(app, 'with couchdb mocked out', {
+            database: {
+                docs: documents
+            }
+        }, 'to yield exchange', {
+            request: {
+                url: '/database'
+            },
+            response: {
+                statusCode: 200,
+                body: {
+                    db_name: 'database',
+                    doc_count: documents.length
+                }
+            }
+        });
+    });
 });
