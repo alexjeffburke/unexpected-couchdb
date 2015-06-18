@@ -11,7 +11,7 @@
     "url": "git://github.com/alexjeffburke/unexpected-couchdb.git"
   },
   "author": "Alex J Burke",
-  "license": "MIT",
+  "license": "BSD",
   "dependencies": {
     "body-parser": "=1.13.1",
     "bufferedstream": "=3.1.1",
@@ -25,6 +25,7 @@
     "beanbag": "=3.2.0",
     "express": "=4.12.3",
     "mocha": "=2.2.5",
-    "unexpected-express": "=7.0.1"
+    "unexpected-express": "=7.0.1",
+    "unexpected-http": "=4.0.0"
   }
 }
