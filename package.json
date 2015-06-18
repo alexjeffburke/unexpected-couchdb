@@ -1,10 +1,14 @@
 {
-  "name": "unexpected-mock-couchdb",
+  "name": "unexpected-couchdb",
   "version": "0.0.0",
-  "description": "",
+  "description": "Unexpected plugin for unit testing against a mock couchdb server.",
   "main": "lib/unexpectedMockCouchdb.js",
   "scripts": {
     "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexjeffburke/unexpected-couchdb.git"
   },
   "author": "Alex J Burke",
   "license": "MIT",
