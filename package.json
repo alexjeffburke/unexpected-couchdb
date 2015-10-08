@@ -1,6 +1,6 @@
 {
   "name": "unexpected-couchdb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unexpected plugin for unit testing against a mock couchdb server.",
   "main": "lib/unexpectedMockCouchdb.js",
   "scripts": {
