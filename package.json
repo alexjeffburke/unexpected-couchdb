@@ -25,8 +25,8 @@
     "beanbag": "=3.3.1",
     "express": "=4.12.3",
     "mocha": "=2.2.5",
-    "unexpected": "=8.5.0",
-    "unexpected-express": "=7.1.0",
-    "unexpected-http": "=4.1.0"
+    "unexpected": "=9.5.0",
+    "unexpected-express": "=7.8.1",
+    "unexpected-http": "=4.8.0"
   }
 }
