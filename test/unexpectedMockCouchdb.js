@@ -12,9 +12,17 @@ describe('unexpected-mock-couchdb', function () {
         url: 'http://localhost:5984/'
     });
 
-    app.get('/:database', function (req, res) {
+    function passthroughHandler(req, res) {
+        var path = '/' + req.params.database;
+
+        if (req.params.document) {
+            path += '/' + req.params.document;
+        }
+
         couchdb.request({
-            path: '/' + req.params.database
+            path: path,
+            method: req.method,
+            body: req.body
         }, function (err, result, body) {
             if (err) {
                 if (err.statusCode === 404) {
@@ -28,9 +36,13 @@ describe('unexpected-mock-couchdb', function () {
                 return res.status(err.statusCode).send(body);
             }
 
-            res.status(200).send(body);
+            res.status(result.statusCode).send(body);
         });
-    });
+    }
+
+    app.get('/:database', passthroughHandler);
+    app.put('/:database', passthroughHandler);
+    app.put('/:database/:document', passthroughHandler);
 
     it('should return 404 if the database is not present', function () {
         return expect(app, 'with couchdb mocked out', {}, 'to yield exchange', {
@@ -76,6 +88,46 @@ describe('unexpected-mock-couchdb', function () {
                 body: {
                     db_name: 'database',
                     doc_count: documents.length
+                }
+            }
+        });
+    });
+
+    it('should allow adding a database', function () {
+        return expect(app, 'with couchdb mocked out', {}, 'to yield exchange', {
+            request: {
+                url: '/newdatabase',
+                method: 'PUT'
+            },
+            response: {
+                statusCode: 201,
+                body: {
+                    ok: true
+                }
+            }
+        });
+    });
+
+    it('should allow saving a document', function () {
+        var writeDocument = {
+            _id: 'write@me.com',
+            foo: 'bar'
+        };
+
+        return expect(app, 'with couchdb mocked out', {
+            database: {
+                docs: []
+            }
+        }, 'to yield exchange', {
+            request: {
+                url: '/database/' + writeDocument._id,
+                method: 'PUT',
+                body: writeDocument
+            },
+            response: {
+                statusCode: 201,
+                body: {
+                    ok: true
                 }
             }
         });
