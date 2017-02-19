@@ -18,14 +18,14 @@
     "unexpected-mitm": "^9.0.0"
   },
   "peerDependencies": {
-    "unexpected": "^10.15.0",
+    "unexpected": "~10.15.0",
     "unexpected-mitm": "^9.0.0"
   },
   "devDependencies": {
     "beanbag": "=3.3.1",
     "express": "=4.12.3",
     "mocha": "=2.2.5",
-    "unexpected": "^10.15.0",
+    "unexpected": "~10.15.0",
     "unexpected-express": "~8.3.0",
     "unexpected-http": "~5.6.0"
   }
