@@ -23,7 +23,7 @@
   "devDependencies": {
     "beanbag": "=3.3.1",
     "express": "=4.12.3",
-    "mocha": "=2.2.5",
+    "mocha": "^5.2.0",
     "unexpected": "^10.27.0",
     "unexpected-express": "^10.1.0",
     "unexpected-http": "^6.0.0"
