@@ -1,12 +1,12 @@
 var BeanBag = require('beanbag');
 var express = require('express');
-var expect = require('unexpected');
+var expect = require('unexpected')
+    .clone()
+    .use(require('../lib/unexpectedMockCouchdb'))
+    .use(require('unexpected-http'))
+    .use(require('unexpected-express'));
 
 describe('unexpected-mock-couchdb', function () {
-    expect.installPlugin(require('../lib/unexpectedMockCouchdb'));
-    expect.installPlugin(require('unexpected-http'));
-    expect.installPlugin(require('unexpected-express'));
-
     var app = express();
     var couchdb = new BeanBag({
         url: 'http://localhost:5984/'
