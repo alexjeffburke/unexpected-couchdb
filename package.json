@@ -15,7 +15,7 @@
   "dependencies": {
     "body-parser": "=1.13.1",
     "mock-couch-alexjeffburke": "=0.1.3-patch2",
-    "unexpected-mitm": "^11.0.0"
+    "unexpected-mitm": "^12.2.1"
   },
   "peerDependencies": {
     "unexpected": "^10.27.0"
