@@ -25,7 +25,7 @@
     "express": "=4.12.3",
     "mocha": "^5.2.0",
     "unexpected": "^11.0.0-4",
-    "unexpected-express": "^10.1.0",
+    "unexpected-express": "^11.1.1",
     "unexpected-http": "^6.0.0"
   }
 }
