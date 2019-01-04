@@ -4,6 +4,7 @@
   "description": "Unexpected plugin for unit testing against a mock couchdb server.",
   "main": "lib/unexpectedMockCouchdb.js",
   "scripts": {
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
     "test": "mocha"
   },
   "repository": {
@@ -24,6 +25,7 @@
     "beanbag": "^3.3.1",
     "express": "^4.12.3",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "unexpected": "^11.0.0-4",
     "unexpected-express": "^11.1.1",
     "unexpected-http": "^6.1.0"
